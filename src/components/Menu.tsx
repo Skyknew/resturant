@@ -13,6 +13,8 @@ const links = [
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
+
+  const user = false
   return (
     <div>
       {!open ? (
@@ -26,6 +28,14 @@ const Menu = () => {
         {links.map((item) => (
           <Link href={item.url} key={item.id}> {item.title} </Link>
         ))}
+        {/* ADDING Login LINKS */}
+
+          {!user ? (
+          <Link href="/login">Login</Link>
+          ) : (
+          <Link href="/orders">Orders</Link>
+          )}
+        
       </div>
     </div>
   );
